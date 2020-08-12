@@ -1,0 +1,41 @@
+<!--The 'delivery_details' value from the .js file should be used-->
+<li id="delivery_details" data-bind="fadeVisible: isVisible">
+    <div class="step-title" data-bind="i18n: 'Step Title'" data-role="title"></div>
+    <div id="checkout-step-title"
+         class="step-content"
+         data-role="content">
+
+        <form data-bind="submit: navigateToNextStep" novalidate="novalidate">
+
+            <label class="label">Delivery Date</label>
+            <div class="control">
+                <input class="input-text" type="text" name="delivery_date" id="delivery_date" data-bind="
+                                                            hasFocus: focused,
+                                                            datepicker: { storage: value },
+                                                            attr: {
+                                                                value: value,
+                                                                name: inputName,
+                                                                placeholder: placeholder,
+                                                                'aria-describedby': noticeId,
+                                                                disabled: disabled,
+                                                                name: 'delivery-date'
+                                                            }"/>
+            </div>
+
+            <label class="label">Comment</label>
+            <div class="control">
+                <textarea name="delivery_comment" id="delivery_comment"></textarea>
+            </div>
+            <br/>
+
+
+            <div class="actions-toolbar">
+                <div class="primary">
+                    <button data-role="opc-continue" type="submit" class="button action continue primary">
+                        <span> Next </span>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</li>
