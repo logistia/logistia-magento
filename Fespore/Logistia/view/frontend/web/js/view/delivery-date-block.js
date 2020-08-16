@@ -20,6 +20,7 @@ define([
             var disabledDay = [];
             var format = 'yy-mm-dd';
             var maxDate;
+            var minDate = 0;
 
             ko.bindingHandlers.datetimepicker = {
                 init: function (element, valueAccessor, allBindingsAccessor) {
@@ -28,7 +29,7 @@ define([
 
                     var options = {
                         timepicker: false,
-                        minDate: 0,
+                        minDate: minDate,
                         maxDate: maxDate,
                         dateFormat: format,
                         beforeShowDay: function (date) {
@@ -67,7 +68,7 @@ define([
             };
 
             setTimeout(() => {
-                $.get(baseUrl + "/shop-checkout/calendar", (data) => {
+                $.get(baseUrl + "/shop-checkout/calendar?host=" + window.location.origin, (data) => {
                     this.allDisabled = data.allDisabled;
                     if (data.allDisabled == true) {
                         setTimeout(() => {
@@ -78,10 +79,12 @@ define([
                         this.availableCountries = data.availableTimeIntervals;
                         disabledDay = data.calendar.disabledDays;
                         maxDate = data.calendar.maxDate;
+                        minDate = data.calendar.minDate;
                         format = data.calendar.dateFormat;
                         $("#delivery_date").datepicker("option", {
                             dateFormat: data.calendar.dateFormat,
-                            maxDate: data.calendar.maxDate
+                            maxDate: data.calendar.maxDate,
+                            minDate: data.calendar.minDate
                         });
                     }
                 });
