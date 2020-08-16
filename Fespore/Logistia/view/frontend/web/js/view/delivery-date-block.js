@@ -4,65 +4,44 @@ define([
     'uiComponent'
 ], function ($, ko, Component) {
     'use strict';
-
+    let baseUrl = "https://71da51b1194c.ngrok.io";
     return Component.extend({
         defaults: {
             template: 'Fespore_Logistia/delivery-date-block'
         },
-        availableCountries: ko.bindingHandlers.observableArray = ['10:00-12:00', '12:00-14:00', '14:00-16:00', '16:00-18:00'],
+        allDisabled: false,
+        availableCountries: ko.bindingHandlers.observableArray = [],
         deliveryDateLabel: window.checkoutConfig.shipping.delivery_date.deliveryDateLabel,
         deliveryTimeLabel: window.checkoutConfig.shipping.delivery_date.deliveryTimeLabel,
         deliveryCommentsLabel: window.checkoutConfig.shipping.delivery_date.deliveryCommentsLabel,
         deliveryAllowComments: window.checkoutConfig.shipping.delivery_date.deliveryAllowComments,
         initialize: function () {
             this._super();
-            console.log(window.checkoutConfig.shipping);
-            /*var disabled = window.checkoutConfig.shipping.delivery_date.disabled;
-            var noday = window.checkoutConfig.shipping.delivery_date.noday;
-            var hourMin = parseInt(window.checkoutConfig.shipping.delivery_date.hourMin);
-            var hourMax = parseInt(window.checkoutConfig.shipping.delivery_date.hourMax);
-            var format = window.checkoutConfig.shipping.delivery_date.format;*/
-            var disabled = "3,6";
-            var noday = false;
-            var hourMin = '08';
-            var hourMax = '20';
+            var disabledDay = [];
             var format = 'yy-mm-dd';
-            if (!format) {
-                format = 'yy-mm-dd';
-            }
-            var disabledDay = disabled.split(",").map(function (item) {
-                return parseInt(item, 10);
-            });
+            var maxDate;
 
             ko.bindingHandlers.datetimepicker = {
                 init: function (element, valueAccessor, allBindingsAccessor) {
                     var $el = $(element);
                     //initialize datetimepicker
-                    if (noday) {
-                        var options = {
-                            timepicker: false,
-                            minDate: 0,
-                            dateFormat: format,
-                            hourMin: hourMin,
-                            hourMax: hourMax
-                        };
-                    } else {
-                        var options = {
-                            timepicker: false,
-                            minDate: 0,
-                            dateFormat: format,
-                            hourMin: hourMin,
-                            hourMax: hourMax,
-                            beforeShowDay: function (date) {
-                                var day = date.getDay();
-                                if (disabledDay.indexOf(day) > -1) {
-                                    return [false];
-                                } else {
-                                    return [true];
-                                }
+
+                    var options = {
+                        timepicker: false,
+                        minDate: 0,
+                        maxDate: maxDate,
+                        dateFormat: format,
+                        beforeShowDay: function (date) {
+                            var day = ('0' + date.getDate()).slice(-2) + '/'
+                                + ('0' + (date.getMonth() + 1)).slice(-2) + '/'
+                                + date.getFullYear();
+                            if (disabledDay.indexOf(day) > -1) {
+                                return [false];
+                            } else {
+                                return [true];
                             }
-                        };
-                    }
+                        }
+                    };
 
                     $el.datepicker(options);
 
@@ -86,6 +65,27 @@ define([
                     }
                 }
             };
+
+            setTimeout(() => {
+                $.get(baseUrl + "/shop-checkout/calendar", (data) => {
+                    this.allDisabled = data.allDisabled;
+                    if (data.allDisabled == true) {
+                        setTimeout(() => {
+                            $("#logistia-calendar").remove();
+                        }, 3000);
+                        maxDate = -1;
+                    } else {
+                        this.availableCountries = data.availableTimeIntervals;
+                        disabledDay = data.calendar.disabledDays;
+                        maxDate = data.calendar.maxDate;
+                        format = data.calendar.dateFormat;
+                        $("#delivery_date").datepicker("option", {
+                            dateFormat: data.calendar.dateFormat,
+                            maxDate: data.calendar.maxDate
+                        });
+                    }
+                });
+            });
 
             return this;
         }

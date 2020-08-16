@@ -48,6 +48,7 @@ class Localdelivery extends \Magento\Shipping\Model\Carrier\AbstractCarrier impl
      */
     public function collectRates(RateRequest $request)
     {
+        return false;
         if (!$this->getConfigFlag('active')) {
             return false;
         }

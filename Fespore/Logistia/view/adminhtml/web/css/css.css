@@ -1,0 +1,7 @@
+#menu-fespore-logistia-index > a:before {
+    content: url('../images/logistia-logo.svg');
+    height: 28px;
+    margin: 0 auto;
+    width: 30px;
+}
+
