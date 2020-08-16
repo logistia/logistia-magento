@@ -1,1 +1,11 @@
+<?php
+
+if ($block->getLogistiaIntegrationStatus()) {
+} else {
+    echo __('<h3 style="background: darkred; color: white; padding: 20px">Please activate <b>Logistia integration</b> from your shop to finish the setup</h3>');
+    echo __('<h4 style="background: darkred; color: white; padding: 20px">Access <b>System</b> -> <b>Integrations</b> -> <b>"Logistia Integration"</b> -> <b>"Activate"</b></h4>');
+}
+
+?>
+
 <iframe src="https://portal.logistia.app" width="100%" height="804px" frameborder="0"></iframe>
