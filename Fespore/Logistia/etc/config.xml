@@ -2,7 +2,7 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
     <default>
         <carriers>
-	
+
             <localdelivery>
                 <active>1</active>
                 <sallowspecific>0</sallowspecific>
@@ -11,10 +11,19 @@
                 <price>00.00</price>
                 <title>Local Delivery</title>
                 <type>I</type>
-                <sort_order>0</sort_order>
+                <sort_order>10</sort_order>
                 <specificerrmsg>This shipping method is not available. To use this shipping method, please contact us.</specificerrmsg>
             </localdelivery>
-			
+
         </carriers>
+        <Fespore_Logistia>
+            <general>
+                <deliveryDateLabel>Delivery date</deliveryDateLabel>
+                <deliveryTimeLabel>Delivery time interval</deliveryTimeLabel>
+                <deliveryCommentsLabel>Delivery comments</deliveryCommentsLabel>
+                <deliveryAllowComments>1</deliveryAllowComments>
+            </general>
+        </Fespore_Logistia>
     </default>
+
 </config>

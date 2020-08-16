@@ -1,0 +1,26 @@
+<from class="form form-shipping-address">
+
+    <div class="field _required">
+        <label class="label" data-bind="text: deliveryDateLabel"></label>
+        <div class="control">
+            <input class="input-text" type="text" data-bind="datetimepicker: true" name="delivery_date"
+                   id="delivery_date"
+                   readonly="true"/>
+        </div>
+    </div>
+
+    <div class="field _required">
+        <label class="label" data-bind="text: deliveryTimeLabel"></label>
+        <div class="control">
+            <select name="delivery_time_interval" id="delivery_time_interval" data-bind="options: availableCountries"></select>
+        </div>
+    </div>
+
+    <div class="field _required">
+        <label class="label" data-bind="text: deliveryCommentsLabel"></label>
+        <div class="control">
+            <textarea name="delivery_comment" id="delivery_comment"></textarea>
+        </div>
+    </div>
+    <br/>
+</from>

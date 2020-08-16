@@ -32,7 +32,7 @@ class CustomerSetup extends EavSetup {
 	public function installCustomerAttributes($customerSetup) {
 			
 
-		$customerSetup -> addAttribute(\Magento\Customer\Model\Customer::ENTITY,
+		/*$customerSetup -> addAttribute(\Magento\Customer\Model\Customer::ENTITY,
 			'deliverydate',
 			[
 			'label' => 'Delivery Date',
@@ -52,7 +52,7 @@ class CustomerSetup extends EavSetup {
 			]
 			);
 
-		$customerSetup -> getEavConfig() -> getAttribute('customer', 'deliverydate')->setData('is_user_defined',1)->setData('is_required',0)->setData('default_value','')->setData('used_in_forms', ['adminhtml_customer', 'checkout_register', 'customer_account_create', 'customer_account_edit', 'adminhtml_checkout']) -> save();
+		$customerSetup -> getEavConfig() -> getAttribute('customer', 'deliverydate')->setData('is_user_defined',1)->setData('is_required',0)->setData('default_value','')->setData('used_in_forms', ['adminhtml_customer', 'checkout_register', 'customer_account_create', 'customer_account_edit', 'adminhtml_checkout']) -> save();*/
 
 				
 

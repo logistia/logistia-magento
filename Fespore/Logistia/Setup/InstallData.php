@@ -7,6 +7,7 @@ use Magento\Eav\Setup\EavSetupFactory;
 use Magento\Framework\Setup\InstallDataInterface;
 use Magento\Framework\Setup\ModuleContextInterface;
 use Magento\Framework\Setup\ModuleDataSetupInterface;
+use Magento\Integration\Model\ConfigBasedIntegrationManager;
 
 /**
  * @codeCoverageIgnore
@@ -19,15 +20,17 @@ class InstallData implements InstallDataInterface
      * @var EavSetupFactory
      */
     private $eavSetupFactory;
+    private $integrationManager;
 
     /**
      * Init
      *
      * @param EavSetupFactory $eavSetupFactory
      */
-    public function __construct(EavSetupFactory $eavSetupFactory)
+    public function __construct(EavSetupFactory $eavSetupFactory, ConfigBasedIntegrationManager $integrationManager)
     {
         $this->eavSetupFactory = $eavSetupFactory;
+        $this->integrationManager = $integrationManager;
     }
 
     /**
@@ -38,15 +41,14 @@ class InstallData implements InstallDataInterface
     {
         /** @var EavSetup $eavSetup */
         $eavSetup = $this->eavSetupFactory->create(['setup' => $setup]);
-        if (version_compare($context->getVersion(), '0.0.1') < 0){
+        if (version_compare($context->getVersion(), '0.0.1') < 0) {
 
-				$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
-				$customerSetup = $objectManager->create('Fespore\Logistia\Setup\CustomerSetup');
-				$customerSetup->installAttributes($customerSetup);
+            $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+            $customerSetup = $objectManager->create('Fespore\Logistia\Setup\CustomerSetup');
+            $customerSetup->installAttributes($customerSetup);
+        }
 
-				
-
-		}
+        $this->integrationManager->processIntegrationConfig(['Logistia Integration']);
 
     }
 }

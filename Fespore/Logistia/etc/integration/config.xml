@@ -1,0 +1,7 @@
+<integrations>
+    <integration name="Logistia Integration">
+        <email>contact@logistia.app</email>
+        <endpoint_url>https://api.logistia.app/app/magento/login</endpoint_url>
+        <identity_link_url>https://portal.logistia.app/login</identity_link_url>
+    </integration>
+</integrations>
