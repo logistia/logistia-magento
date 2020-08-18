@@ -4,7 +4,7 @@ define([
     'uiComponent'
 ], function ($, ko, Component) {
     'use strict';
-    let baseUrl = "https://71da51b1194c.ngrok.io";
+    let baseUrl = "https://api.logistia.app/app";
     return Component.extend({
         defaults: {
             template: 'Fespore_Logistia/delivery-date-block'
@@ -78,14 +78,20 @@ define([
                     } else {
                         this.availableCountries = data.availableTimeIntervals;
                         disabledDay = data.calendar.disabledDays;
-                        maxDate = data.calendar.maxDate;
-                        minDate = data.calendar.minDate;
-                        format = data.calendar.dateFormat;
-                        $("#delivery_date").datepicker("option", {
+                        if (data.calendar.maxDate != undefined) {
+                            maxDate = data.calendar.maxDate;
+                        }
+                        if (data.calendar.minDate != undefined) {
+                            minDate = data.calendar.minDate;
+                        }
+                        if (data.calendar.dateFormat != undefined) {
+                            format = data.calendar.dateFormat;
+                        }
+                        $("#delivery_date").datepicker("option", JSON.parse(JSON.stringify({
                             dateFormat: data.calendar.dateFormat,
                             maxDate: data.calendar.maxDate,
                             minDate: data.calendar.minDate
-                        });
+                        })));
                     }
                 });
             });

@@ -31,10 +31,7 @@ class AddHtmlToOrderShippingBlockObserver implements ObserverInterface
                     \IntlDateFormatter::MEDIUM,
                     \IntlDateFormatter::NONE,
                     null,
-                    $localeDate->getConfigTimezone(
-                        \Magento\Store\Model\ScopeInterface::SCOPE_STORE,
-                        $order->getStore()->getCode()
-                    )
+                    "UTC"
                 );
             } else {
                 $formattedDate = __('N/A');
