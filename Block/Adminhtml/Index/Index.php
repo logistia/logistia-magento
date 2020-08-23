@@ -1,6 +1,6 @@
 <?php
 
-namespace Fespore\Logistia\Block\Adminhtml\Index;
+namespace Logistia\Logistia\Block\Adminhtml\Index;
 
 use Magento\Integration\Model\IntegrationFactory;
 

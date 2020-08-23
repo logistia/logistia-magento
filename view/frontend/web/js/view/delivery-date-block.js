@@ -7,7 +7,7 @@ define([
     let baseUrl = "https://api.logistia.app/app";
     return Component.extend({
         defaults: {
-            template: 'Fespore_Logistia/delivery-date-block'
+            template: 'Logistia_Logistia/delivery-date-block'
         },
         allDisabled: false,
         availableCountries: ko.bindingHandlers.observableArray = [],

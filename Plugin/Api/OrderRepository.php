@@ -1,6 +1,6 @@
 <?php
 
-namespace Fespore\Logistia\Plugin\api;
+namespace Logistia\Logistia\Plugin\api;
 
 use Magento\Sales\Api\Data\OrderExtensionFactory;
 use Magento\Sales\Api\Data\OrderInterface;

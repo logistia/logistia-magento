@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
     <system>
-        <section id="Fespore_Logistia" translate="label" type="text" sortOrder="1300" showInDefault="1" showInWebsite="1" showInStore="1">
+        <section id="Logistia_Logistia" translate="label" type="text" sortOrder="1300" showInDefault="1" showInWebsite="1" showInStore="1">
             <label>Order Delivery Date Settings</label>
             <tab>sales</tab>
-            <resource>Fespore_Logistia::deliverydate</resource>
+            <resource>Logistia_Logistia::deliverydate</resource>
             <group id="general" type="text"  sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>Extension Settings</label>
                 <!--<field id="format" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
@@ -13,7 +13,7 @@
                 </field>
                 <field id="disabled" translate="label" type="multiselect" sortOrder="15" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Disabled Delivery Date</label>
-                    <source_model>Fespore\Logistia\Model\Config\Source\Disabled</source_model>
+                    <source_model>Logistia\Logistia\Model\Config\Source\Disabled</source_model>
                 </field>
                 <field id="hourMin" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Delivery Hour Start:</label>
@@ -33,7 +33,7 @@
                     <label>Delivery comments label</label>
                 </field>
                <!-- <field id="deliveryAllowComments" translate="label" type="checkbox" sortOrder="25" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
-                    <source_model>Fespore\Logistia\Model\Config\Source\Checkbox</source_model>
+                    <source_model>Logistia\Logistia\Model\Config\Source\Checkbox</source_model>
                     <label>Allow delivery comments</label>
                 </field>-->
 

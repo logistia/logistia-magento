@@ -2,6 +2,6 @@
 
 \Magento\Framework\Component\ComponentRegistrar::register(
     \Magento\Framework\Component\ComponentRegistrar::MODULE,
-    'Fespore_Logistia',
+    'Logistia_Logistia',
     __DIR__
 );

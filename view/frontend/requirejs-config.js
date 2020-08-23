@@ -1,7 +1,7 @@
 var config = {
     "map": {
         "*": {
-            'Magento_Checkout/js/model/shipping-save-processor/default': 'Fespore_Logistia/js/model/shipping-save-processor/default'
+            'Magento_Checkout/js/model/shipping-save-processor/default': 'Logistia_Logistia/js/model/shipping-save-processor/default'
         }
     }
 };

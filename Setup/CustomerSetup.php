@@ -1,6 +1,6 @@
 <?php
 
-namespace Fespore\Logistia\Setup;
+namespace Logistia\Logistia\Setup;
 
 use Magento\Eav\Model\Config;
 use Magento\Eav\Model\Entity\Setup\Context;

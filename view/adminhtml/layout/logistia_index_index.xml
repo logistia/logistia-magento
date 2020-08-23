@@ -2,10 +2,10 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
 	<head>
         <title>Logistia</title>
-        <css src="Fespore_Logistia::css/css.css"/>
+        <css src="Logistia_Logistia::css/css.css"/>
         <!--
 		demo
-		<script src="Fespore_Logistia::js/js.js"/>
+		<script src="Logistia_Logistia::js/js.js"/>
 		<css src="jquery/fileUploader/css/jquery.fileupload-ui.css"/>
 		<script src="path/file.js" defer="defer"/>
 		<link src="http://url.com" src_type="url"/>
@@ -14,7 +14,7 @@
     </head>
 	<body>
         <referenceContainer name="content">
-            <block class="Fespore\Logistia\Block\Adminhtml\Index\Index" name="logistia_block_adminhtml_index_index"  template="Fespore_Logistia::logistia_index_index.phtml" />
+            <block class="Logistia\Logistia\Block\Adminhtml\Index\Index" name="logistia_block_adminhtml_index_index"  template="Logistia_Logistia::logistia_index_index.phtml" />
         </referenceContainer>
     </body>
 </page>

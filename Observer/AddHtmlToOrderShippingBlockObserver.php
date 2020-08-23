@@ -1,5 +1,5 @@
 <?php
-namespace Fespore\Logistia\Observer;
+namespace Logistia\Logistia\Observer;
 
 use Magento\Framework\Event\Observer as EventObserver;
 use Magento\Framework\Event\ObserverInterface;
@@ -41,7 +41,7 @@ class AddHtmlToOrderShippingBlockObserver implements ObserverInterface
             $deliveryDateBlock->setDeliveryDate($formattedDate);
             $deliveryDateBlock->setDeliveryComment($order->getDeliveryComment());
             $deliveryDateBlock->setDeliveryTimeInterval($order->getDeliveryTimeInterval());
-            $deliveryDateBlock->setTemplate('Fespore_Logistia::order_info_shipping_info.phtml');
+            $deliveryDateBlock->setTemplate('Logistia_Logistia::order_info_shipping_info.phtml');
             $html = $observer->getTransport()->getOutput() . $deliveryDateBlock->toHtml();
             $observer->getTransport()->setOutput($html);
         }

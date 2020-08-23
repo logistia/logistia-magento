@@ -15,13 +15,13 @@ define(
         /**
          *
          * date-picker - is the name of the component's .html template,
-         * Fespore_Logistia  - is the name of the your module directory.
+         * Logistia_Logistia  - is the name of the your module directory.
          *
          */
 
         return Component.extend({
             defaults: {
-                template: 'Fespore_Logistia/date-picker'
+                template: 'Logistia_Logistia/date-picker'
             },
 
             //add here your logic to display step,

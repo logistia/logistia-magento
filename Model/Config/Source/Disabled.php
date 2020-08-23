@@ -1,5 +1,5 @@
 <?php
-namespace Fespore\Logistia\Model\Config\Source;
+namespace Logistia\Logistia\Model\Config\Source;
 
 
 class Disabled implements \Magento\Framework\Option\ArrayInterface

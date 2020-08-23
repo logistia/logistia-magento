@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Magento/Backend/etc/menu.xsd">
     <menu>
-<!--        <add id="Fespore_Logistia::parent" title="Logistia" module="Fespore_Logistia" sortOrder="100" resource="Fespore_Logistia::parent"/>-->
-<!--        <add id="Fespore_Logistia::index" title="Logistia Index" module="Fespore_Logistia" sortOrder="10" action="logistia/index" resource="Fespore_Logistia::index" parent="Fespore_Logistia::parent"/>-->
-        <add id="Fespore_Logistia::index" title="Logistia" module="Fespore_Logistia" sortOrder="80" action="logistia/index" resource="Fespore_Logistia::index"/>
+<!--        <add id="Logistia_Logistia::parent" title="Logistia" module="Logistia_Logistia" sortOrder="100" resource="Logistia_Logistia::parent"/>-->
+<!--        <add id="Logistia_Logistia::index" title="Logistia Index" module="Logistia_Logistia" sortOrder="10" action="logistia/index" resource="Logistia_Logistia::index" parent="Logistia_Logistia::parent"/>-->
+        <add id="Logistia_Logistia::index" title="Logistia" module="Logistia_Logistia" sortOrder="80" action="logistia/index" resource="Logistia_Logistia::index"/>
 
     </menu>
 </config>

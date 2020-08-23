@@ -1,15 +1,15 @@
 <?php
-namespace Fespore\Logistia\Model;
+namespace Logistia\Logistia\Model;
 
 use Magento\Checkout\Model\ConfigProviderInterface;
 use Magento\Store\Model\ScopeInterface;
 
 class DeliveryDateConfigProvider implements ConfigProviderInterface
 {
-    const deliveryDateLabel = 'Fespore_Logistia/general/deliveryDateLabel';
-    const deliveryTimeLabel = 'Fespore_Logistia/general/deliveryTimeLabel';
-    const deliveryCommentsLabel = 'Fespore_Logistia/general/deliveryCommentsLabel';
-    const deliveryAllowComments = 'Fespore_Logistia/general/deliveryAllowComments';
+    const deliveryDateLabel = 'Logistia_Logistia/general/deliveryDateLabel';
+    const deliveryTimeLabel = 'Logistia_Logistia/general/deliveryTimeLabel';
+    const deliveryCommentsLabel = 'Logistia_Logistia/general/deliveryCommentsLabel';
+    const deliveryAllowComments = 'Logistia_Logistia/general/deliveryAllowComments';
 
     /**
      * @var \Magento\Store\Model\StoreManagerInterface

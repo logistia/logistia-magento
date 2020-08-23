@@ -6,7 +6,7 @@
             <localdelivery>
                 <active>1</active>
                 <sallowspecific>0</sallowspecific>
-                <model>Fespore\Logistia\Model\Carrier\Localdelivery</model>
+                <model>Logistia\Logistia\Model\Carrier\Localdelivery</model>
                 <name>Local Delivery</name>
                 <price>00.00</price>
                 <title>Local Delivery</title>
@@ -16,14 +16,14 @@
             </localdelivery>
 
         </carriers>
-        <Fespore_Logistia>
+        <Logistia_Logistia>
             <general>
                 <deliveryDateLabel>Delivery date</deliveryDateLabel>
                 <deliveryTimeLabel>Delivery time interval</deliveryTimeLabel>
                 <deliveryCommentsLabel>Delivery comments</deliveryCommentsLabel>
                 <deliveryAllowComments>1</deliveryAllowComments>
             </general>
-        </Fespore_Logistia>
+        </Logistia_Logistia>
     </default>
 
 </config>

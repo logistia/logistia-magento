@@ -1,6 +1,6 @@
 <?php
 
-namespace Fespore\Logistia\Setup;
+namespace Logistia\Logistia\Setup;
 
 use Magento\Eav\Setup\EavSetup;
 use Magento\Eav\Setup\EavSetupFactory;
@@ -44,7 +44,7 @@ class InstallData implements InstallDataInterface
         if (version_compare($context->getVersion(), '0.0.1') < 0) {
 
             $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
-            $customerSetup = $objectManager->create('Fespore\Logistia\Setup\CustomerSetup');
+            $customerSetup = $objectManager->create('Logistia\Logistia\Setup\CustomerSetup');
             $customerSetup->installAttributes($customerSetup);
         }
 

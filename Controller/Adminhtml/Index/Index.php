@@ -1,6 +1,6 @@
 <?php
 
-namespace Fespore\Logistia\Controller\Adminhtml\Index;
+namespace Logistia\Logistia\Controller\Adminhtml\Index;
 
 
 class Index extends \Magento\Backend\App\Action

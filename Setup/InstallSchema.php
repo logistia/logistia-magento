@@ -1,5 +1,5 @@
 <?php
-namespace Fespore\Logistia\Setup;
+namespace Logistia\Logistia\Setup;
 
 
 use Magento\Framework\Setup\InstallSchemaInterface;

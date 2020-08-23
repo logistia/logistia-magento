@@ -1,5 +1,5 @@
 <?php
-namespace Fespore\Logistia\Plugin\Checkout\Model;
+namespace Logistia\Logistia\Plugin\Checkout\Model;
 
 
 class ShippingInformationManagement
