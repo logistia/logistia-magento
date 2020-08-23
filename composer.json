@@ -2,8 +2,7 @@
   "name": "logistia/logistia",
   "description": "Go the extra mile to perfect the last mile delivery with Logistia. Optimize routes with real-life factors like the number of orders and drivers, vehicle load, lunch breaks, or and tight time windows while you drink your coffee.",
   "require": {
-    "php": ">=7.1.3",
-    "magento/module-integration": "2.0.0"
+    "php": ">=7.1.3"
   },
   "repositories": [
     {
